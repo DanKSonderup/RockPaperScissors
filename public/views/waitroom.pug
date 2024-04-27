@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Loading Spinner Example
+    link(rel="stylesheet", href="/css/waitroom.css")
+  body
+  div.header
+    div.centered
+        h1 GameRoomID: #{roomId}
+        h1 Venter på modstander
+        .lds-roller
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+script(src="http://localhost:3005/socket.io/socket.io.js")
+script(src="/js/index.js")
