@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3005/', { transports: ['websocket', 'polling', 'flashsocket'] });
+const socket = io('http://localhost:3005', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 const form = document.getElementById('form');
 const input = document.getElementById('input');
@@ -7,7 +7,7 @@ console.log("Loaded index.js");
 
 socket.on('roomCreated', function (roomId) {
     console.log('Room created:', roomId);
-    fetch(`rockpaperscissors/waitroom/${roomId}`)
+    fetch(`/waitroom/${roomId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@ socket.on('roomCreated', function (roomId) {
 
 socket.on('playerjoined', function (roomId) {
     console.log('Playerjoined called', roomId);
-    fetch(`rockpaperscissors/gameroom/${roomId}`)
+    fetch(`/gameroom/${roomId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
