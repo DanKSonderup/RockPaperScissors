@@ -43,7 +43,7 @@ socket.on('playerjoined', function (roomId) {
         .then(html => {
             document.body.innerHTML = html;
             const script = document.createElement('script');
-            script.src = '/js/gameroom.js';
+            script.src = 'js/gameroom.js';
             script.defer = true;
             document.body.appendChild(script);
         })
