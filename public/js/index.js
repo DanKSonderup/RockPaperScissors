@@ -3,8 +3,6 @@ const socket = io('http://localhost:3005', { transports: ['websocket', 'polling'
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 
-console.log(socket);
-
 console.log("Loaded index.js");
 
 function constructUrl(path, roomId) {
@@ -14,7 +12,6 @@ function constructUrl(path, roomId) {
 
 socket.on('roomCreated', function (roomId) {
     console.log('Room created:', roomId);
-    console.log(socket);
     fetch(constructUrl('waitroom', roomId))
         .then(response => {
             if (!response.ok) {
