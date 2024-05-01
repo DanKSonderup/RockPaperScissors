@@ -51,7 +51,7 @@ socket.on('roundWinner', function (roundWinner) {
     setTimeout(() => {
         gameContainer.classList.remove("start");
         let pickToNum = ['R', 'S', 'P'];
-        let pickImages = ["/images/rock.png", "images/scissors.png", "/images/paper.png"];
+        let pickImages = [constructUrl("/images/rock.png"), constructUrl("images/scissors.png"), constructUrl("/images/paper.png")];
         opponentResult.src = pickImages[pickToNum.indexOf(opponentPick)];
         userResult.src = pickImages[pickToNum.indexOf(playerPick)];
         if (roundWinner.roundWinner === -1) {
