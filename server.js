@@ -6,8 +6,9 @@ const pug = require('pug');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, './public/views'));
 
 app.use('/rockpaperscissors', pageRouter);
 
