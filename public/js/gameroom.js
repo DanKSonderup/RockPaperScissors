@@ -17,13 +17,11 @@ socket.emit('requestUser', roomId, clientId);
 function constructUrl(path) {
     const baseUrl = window.location.origin + window.location.pathname;
     const mixedUrl = `${baseUrl}${path}`;
-    console.log(mixedUrl);
     return mixedUrl;
 }
 
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
-        constructUrl("images/rock.png");
         image.classList.add("active");
         userResult.src = opponentResult.src = constructUrl("images/rock.png");
         result.textContent = "Vent på modstander...";
