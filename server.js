@@ -1,5 +1,4 @@
 const express = require('express');
-// const pageRouter = require('./server/routes/pagerouter');
 const app = express();
 const path = require('path');
 const pug = require('pug');

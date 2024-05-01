@@ -3,10 +3,13 @@ const socket = io('http://localhost:3005', { transports: ['websocket', 'polling'
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 
+console.log(socket);
+
 console.log("Loaded index.js");
 
 socket.on('roomCreated', function (roomId) {
     console.log('Room created:', roomId);
+    console.log(socket);
     fetch(`/waitroom/${roomId}`)
         .then(response => {
             if (!response.ok) {
@@ -46,6 +49,7 @@ socket.on('playerjoined', function (roomId) {
 });
 
 function createRoom() {
+    console.log("Called CreateRoom");
     socket.emit('createRoom');
 }
 
