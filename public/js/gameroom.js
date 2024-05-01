@@ -17,7 +17,7 @@ socket.emit('requestUser', roomId, clientId);
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
-        userResult.src = opponentResult.src = "/images/rock.png";
+        userResult.src = opponentResult.src = "images/rock.png";
         result.textContent = "Vent på modstander...";
         optionImages.forEach((image2, index2) => {
             if (index !== index2) {
@@ -43,7 +43,7 @@ socket.on('roundWinner', function (roundWinner) {
     setTimeout(() => {
         gameContainer.classList.remove("start");
         let pickToNum = ['R', 'S', 'P'];
-        let pickImages = ["/images/rock.png", "/images/scissors.png", "/images/paper.png"];
+        let pickImages = ["/images/rock.png", "images/scissors.png", "/images/paper.png"];
         opponentResult.src = pickImages[pickToNum.indexOf(opponentPick)];
         userResult.src = pickImages[pickToNum.indexOf(playerPick)];
         if (roundWinner.roundWinner === -1) {
