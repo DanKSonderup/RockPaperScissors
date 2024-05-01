@@ -7,10 +7,15 @@ console.log(socket);
 
 console.log("Loaded index.js");
 
+function constructUrl(path, roomId) {
+    const baseUrl = window.location.origin + window.location.pathname;
+    return `${baseUrl}${path}/${roomId}`;
+}
+
 socket.on('roomCreated', function (roomId) {
     console.log('Room created:', roomId);
     console.log(socket);
-    fetch(`rockpaperscissors/waitroom/${roomId}`)
+    fetch(constructUrl('waitroom', roomId))
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -28,7 +33,7 @@ socket.on('roomCreated', function (roomId) {
 
 socket.on('playerjoined', function (roomId) {
     console.log('Playerjoined called', roomId);
-    fetch(`/gameroom/${roomId}`)
+    fetch(constructUrl('gameroom', roomId))
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
