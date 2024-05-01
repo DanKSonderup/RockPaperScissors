@@ -31,6 +31,7 @@ app.get('/gameroom/:id', (req, res) => {
 });
 
 io.on('connection', socket => {
+    console.log("Socket turned on");
     socket.on('createRoom', () => {
         let roomId;
         do {
