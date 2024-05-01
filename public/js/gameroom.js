@@ -24,7 +24,7 @@ optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         constructUrl("images/rock.png");
         image.classList.add("active");
-        userResult.src = opponentResult.src = constructUrl("images/rock.png");
+        userResult.src = opponentResult.src = "images/rock.png";
         result.textContent = "Vent på modstander...";
         optionImages.forEach((image2, index2) => {
             if (index !== index2) {
