@@ -22,6 +22,7 @@ function constructUrl(path) {
 
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
+        constructUrl("images/rock.png");
         image.classList.add("active");
         userResult.src = opponentResult.src = constructUrl("images/rock.png");
         result.textContent = "Vent på modstander...";
