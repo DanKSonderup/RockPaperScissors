@@ -14,10 +14,15 @@ let userIndex = -1;
 
 socket.emit('requestUser', roomId, clientId);
 
+function constructUrl(path) {
+    const baseUrl = window.location.origin + window.location.pathname;
+    return `${baseUrl}${path}`;
+}
+
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
-        userResult.src = opponentResult.src = "images/rock.png";
+        userResult.src = opponentResult.src = constructUrl("images/rock.png");
         result.textContent = "Vent på modstander...";
         optionImages.forEach((image2, index2) => {
             if (index !== index2) {
