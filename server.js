@@ -1,17 +1,15 @@
 const express = require('express');
 const io = require('socket.io')(3005);
-const path = require('path');
 const app = express();
+const path = require('path');
 const RoomLogic = require('./server/roomLogic');
 const GameLogic = require('./server/gameLogic');
 const pug = require('pug');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: false }));
-
 app.set('view engine', 'pug');
-app.set('views', './public/views')
+app.set('views', path.join(__dirname, 'public/views'));
 
 const activeRooms = {};
 const Users = [{}];
