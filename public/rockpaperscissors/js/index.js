@@ -7,7 +7,7 @@ console.log("Loaded index.js");
 
 socket.on('roomCreated', function (roomId) {
     console.log('Room created:', roomId);
-    fetch(`/waitroom/${roomId}`)
+    fetch(`rockpaperscissors/waitroom/${roomId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@ socket.on('roomCreated', function (roomId) {
 
 socket.on('playerjoined', function (roomId) {
     console.log('Playerjoined called', roomId);
-    fetch(`/gameroom/${roomId}`)
+    fetch(`rockpaperscissors/gameroom/${roomId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
