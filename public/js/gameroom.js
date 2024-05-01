@@ -16,6 +16,7 @@ socket.emit('requestUser', roomId, clientId);
 
 function constructUrl(path) {
     const baseUrl = window.location.origin + window.location.pathname;
+    console.log(baseurl);
     return `${baseUrl}${path}`;
 }
 
