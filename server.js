@@ -6,7 +6,7 @@ const GameLogic = require('./server/gameLogic');
 const pug = require('pug');
 
 
-app.use(express.static('public'));
+app.use(express.static('./public'));
 app.set('view engine', 'pug');
 app.set('views', './public/views')
 
