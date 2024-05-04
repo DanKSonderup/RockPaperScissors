@@ -1,8 +1,10 @@
 const express = require('express');
+const http = require('http');
 const app = express();
+const server = http.createServer(app);
 const path = require('path');
 const pug = require('pug');
-const io = require('socket.io')(3005);
+const io = require('socket.io')(server);
 const RoomLogic = require('./server/roomLogic');
 const GameLogic = require('./server/gameLogic');
 
@@ -95,6 +97,6 @@ app.use((err, req, res, next) => {
     res.send(err.message);
 });
 
-app.listen(3000, () => {
+server.listen(3000, () => {
     console.log('Listening on port 3000');
 });
