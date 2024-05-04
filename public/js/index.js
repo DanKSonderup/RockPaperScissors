@@ -1,4 +1,4 @@
-const socket = io('https://www.sorkodev.com:3005', { transports: ['websocket', 'polling', 'flashsocket'] });
+const socket = io('http://localhost:3005', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 const form = document.getElementById('form');
 const input = document.getElementById('input');
