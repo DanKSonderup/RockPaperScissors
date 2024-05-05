@@ -1,5 +1,5 @@
 
-const socket = io('http://localhost:3000', { transports: ['websocket', 'polling', 'flashsocket'] });
+const socket = io({ transports: ['websocket', 'polling', 'flashsocket'] });
 
 const form = document.getElementById('form');
 const input = document.getElementById('input');
